@@ -1,52 +1,88 @@
-Biblioteca de Manipulación de Bases de Datos SQLite
-Este código en Python proporciona una herramienta simple para crear y gestionar bases de datos SQLite, especialmente diseñada para el contexto de una biblioteca. Esta biblioteca permite a los usuarios definir tablas personalizadas con columnas específicas y luego insertar datos en ellas de manera interactiva.
+# Biblioteca de Manipulación de Bases de Datos SQLite en Python
 
-Características
-Creación de Tablas Dinámicas: La función crea_bbdd facilita la creación dinámica de tablas en una base de datos SQLite. Los usuarios pueden definir el nombre de la tabla y las columnas junto con sus tipos de datos.
+Este código en Python proporciona una herramienta simple y efectiva para crear y gestionar bases de datos SQLite. Está especialmente diseñada para su uso en el contexto de una biblioteca, permitiendo a los usuarios definir tablas personalizadas con columnas específicas y luego insertar datos de manera interactiva.
 
-Generación de Diccionarios de Columnas: La función crea_diccionario_columnas permite a los usuarios especificar la cantidad de columnas y definir sus nombres y tipos de datos de manera interactiva.
+## Características
 
-Inserción de Datos Interactiva: La función inserta_datos permite a los usuarios insertar datos en la tabla creada de manera interactiva, solicitando valores para cada columna.
+- **Creación de Tablas Dinámicas:** La biblioteca ofrece una interfaz para crear tablas dinámicamente en una base de datos SQLite. Los usuarios pueden definir el nombre de la tabla y las columnas, junto con sus tipos de datos.
 
-Ejemplo de Uso
-python
+- **Generación de Diccionarios de Columnas:** Proporciona una función para generar diccionarios de columnas de manera interactiva, permitiendo a los usuarios especificar la cantidad de columnas y definir sus nombres y tipos de datos.
+
+- **Inserción de Datos Interactiva:** La función de inserción de datos permite a los usuarios insertar datos en la tabla creada de manera interactiva, solicitando valores para cada columna.
+
+## Ejemplo de Uso con la Clase `Bbdd`
+
+```python
+from bbdd import Bbdd
+
+# Instanciar la clase
+bbdd = Bbdd()
+
+# Crear la base de datos y la tabla
+bbdd.crear_bbdd()
+
+# Insertar datos de manera interactiva
+bbdd.inserta_datos()
+
+
+¡Claro! Aquí tienes una versión mejorada y más legible de tu README:
+
+markdown
 Copy code
-import sqlite3
+# Biblioteca de Manipulación de Bases de Datos SQLite en Python
 
-# Crear una tabla dinámicamente
-def crea_bbdd(nombre_tabla, columnas):
-    # Código de creación de la tabla ...
+Este código en Python proporciona una herramienta simple y efectiva para crear y gestionar bases de datos SQLite. Está especialmente diseñada para su uso en el contexto de una biblioteca, permitiendo a los usuarios definir tablas personalizadas con columnas específicas y luego insertar datos de manera interactiva.
 
-# Generar un diccionario de columnas de manera interactiva
-def crea_diccionario_columnas():
-    # Código para crear el diccionario de columnas ...
+## Características
 
-# Insertar datos de manera interactiva en la tabla creada
-def inserta_datos(nombre_tabla, columnas):
-    # Código de inserción de datos ...
+- **Creación de Tablas Dinámicas:** La biblioteca ofrece una interfaz para crear tablas dinámicamente en una base de datos SQLite. Los usuarios pueden definir el nombre de la tabla y las columnas, junto con sus tipos de datos.
 
+- **Generación de Diccionarios de Columnas:** Proporciona una función para generar diccionarios de columnas de manera interactiva, permitiendo a los usuarios especificar la cantidad de columnas y definir sus nombres y tipos de datos.
+
+- **Inserción de Datos Interactiva:** La función de inserción de datos permite a los usuarios insertar datos en la tabla creada de manera interactiva, solicitando valores para cada columna.
+
+## Ejemplo de Uso con la Clase `Bbdd`
+
+```python
+from bbdd import Bbdd
+
+# Instanciar la clase
+bbdd = Bbdd()
+
+# Crear la base de datos y la tabla
+bbdd.crear_bbdd()
+
+# Insertar datos de manera interactiva
+bbdd.inserta_datos()
+Este código proporciona una interfaz estructurada utilizando la clase Bbdd para manipular bases de datos SQLite de manera eficiente. Permite a los usuarios definir la estructura de la base de datos y realizar operaciones de inserción según sus necesidades específicas.
+
+Ejemplo de Uso Completo
 if __name__ == "__main__":
-    # Ejecutar el programa principal ...
-
     # Solicitar el nombre de la tabla y generar el diccionario de columnas
     nombre_tabla = input('Introduce nombre de la tabla: ')
-    diccionario_columnas = crea_diccionario_columnas()
+    diccionario_columnas = bbdd.crea_diccionario_columnas()
 
     # Crear la tabla en la base de datos
-    crea_bbdd(nombre_tabla, diccionario_columnas)
+    bbdd.crear_bbdd(nombre_tabla, diccionario_columnas)
 
     # Solicitar la inserción de datos en la tabla creada
     insert = input('¿Quieres introducir datos en la tabla creada? ')
     if insert.lower() == 'si':
         while True:
-            inserta_datos(nombre_tabla, diccionario_columnas)
+            bbdd.inserta_datos(nombre_tabla, diccionario_columnas)
             seguir = input('¿Quieres introducir más datos (si/no): ')
             if seguir.lower() != 'si':
                 break
-Este código proporciona una interfaz interactiva para crear tablas SQLite personalizadas y agregar datos a ellas de manera fácil y eficiente. Además, permite a los usuarios definir la estructura de la base de datos según sus necesidades específicas.
+Este ejemplo completo guía a los usuarios desde la creación de la base de datos y la tabla hasta la inserción de datos, proporcionando un escenario más realista y completo de cómo utilizar la biblioteca.
 
+Instalación
+Requisitos:
 
+Python 3.x
+SQLite3
+Para instalar la biblioteca, utiliza el siguiente comando:
+pip install tu-biblioteca
+¡Bienvenido a simplificar tu manipulación de bases de datos SQLite con esta biblioteca en Python! ¡Esperamos que encuentres útiles estas herramientas!
 
-
-
+Asegúrate de reemplazar `"tu-biblioteca"` con el nombre real de tu biblioteca. Este README proporciona una estructura más clara, destaca las características clave y brinda ejemplos de uso completo para hacerlo más atractivo y legible para los usuarios.
 
